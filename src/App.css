@@ -1,38 +1,329 @@
+/* App.css: Estilo moderno y atractivo para la app de rutinas */
+body {
+  background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+}
+
 .App {
+  max-width: 480px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  padding: 2.5rem 2rem 2rem 2rem;
   text-align: center;
+  animation: fadeInUp 1s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h1 {
+  color: #f76b1c;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.routine-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.routine-form label {
+  font-weight: 500;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3rem;
+}
+
+.routine-form input,
+.routine-form select {
+  padding: 0.5rem 0.8rem;
+  border: 1px solid #f76b1c;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 100%;
+  margin-top: 0.2rem;
+  background: #fff8f2;
+  transition: border 0.2s;
+}
+
+.routine-form input:focus,
+.routine-form select:focus {
+  border: 2px solid #f76b1c;
+  outline: none;
+}
+
+.routine-form button {
+  background: linear-gradient(90deg, #f76b1c 0%, #fad961 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.8rem 1.2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  box-shadow: 0 2px 8px rgba(247,107,28,0.08);
+  transition: background 0.2s, transform 0.1s;
+}
+
+.routine-form button:hover {
+  background: linear-gradient(90deg, #fad961 0%, #f76b1c 100%);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.routine-form button:active {
+  transform: scale(0.97);
+}
+
+.routine-result {
+  background: #fff8f2;
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  box-shadow: 0 2px 8px rgba(247,107,28,0.07);
+  margin-top: 1.5rem;
+  animation: fadeIn 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.routine-result h2 {
+  color: #f76b1c;
+  margin-bottom: 1rem;
+}
+
+.routine-result ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.routine-result li {
+  margin-bottom: 0.7rem;
+  color: #333;
+  font-size: 1.05rem;
+  transition: background 0.2s, color 0.2s, transform 0.1s;
+  border-radius: 6px;
+  padding: 0.3rem 0.5rem;
+}
+
+.routine-result li:hover {
+  background: #ffe0c2;
+  color: #f76b1c;
+  transform: scale(1.03);
+}
+
+.routine-result strong {
+  color: #f76b1c;
+}
+
+/* Botón flotante para reiniciar rutina */
+.fab-restart {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  background: linear-gradient(90deg, #fad961 0%, #f76b1c 100%);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  font-size: 2rem;
+  box-shadow: 0 4px 16px rgba(247,107,28,0.18);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.fab-restart:hover {
+  background: linear-gradient(90deg, #f76b1c 0%, #fad961 100%);
+  transform: scale(1.08);
+}
+
+/* Mensaje motivacional animado */
+.motivational {
+  margin-top: 1.2rem;
+  font-size: 1.1rem;
+  color: #f76b1c;
+  font-weight: 600;
+  animation: popIn 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.7); }
+  60% { opacity: 1; transform: scale(1.1); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Acciones de rutina (compartir, descargar, historial) */
+.routine-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.2rem 0 0.5rem 0;
+}
+
+.routine-actions button {
+  background: linear-gradient(90deg, #f76b1c 0%, #fad961 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1.1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(247,107,28,0.08);
+  transition: background 0.2s, transform 0.1s;
+}
+
+.routine-actions button:hover {
+  background: linear-gradient(90deg, #fad961 0%, #f76b1c 100%);
+  transform: translateY(-2px) scale(1.04);
+}
+
+/* Historial de rutinas */
+.history-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff8f2;
+  border-radius: 14px;
+  box-shadow: 0 8px 32px rgba(247,107,28,0.18);
+  padding: 2rem 1.2rem 1.2rem 1.2rem;
+  z-index: 200;
+  max-width: 90vw;
+  max-height: 80vh;
+  overflow-y: auto;
+  animation: fadeInUp 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.history-modal h3 {
+  color: #f76b1c;
+  margin-bottom: 1rem;
+}
+
+.history-modal ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.history-modal li {
+  margin-bottom: 1.2rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(247,107,28,0.07);
+  padding: 0.7rem 1rem;
+}
+
+.history-date {
+  font-size: 0.95rem;
+  color: #888;
+  margin-bottom: 0.3rem;
+}
+
+/* Botón y modal de reconocimiento de movimiento (demo de cámara) */
+.camera-btn {
+  margin-top: 1.2rem;
+  background: linear-gradient(90deg, #fad961 0%, #f76b1c 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.7rem 1.3rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(247,107,28,0.08);
+  transition: background 0.2s, transform 0.1s;
+}
+
+.camera-btn:hover {
+  background: linear-gradient(90deg, #f76b1c 0%, #fad961 100%);
+  transform: scale(1.04);
+}
+
+.camera-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff8f2;
+  border-radius: 14px;
+  box-shadow: 0 8px 32px rgba(247,107,28,0.18);
+  padding: 2rem 1.2rem 1.2rem 1.2rem;
+  z-index: 300;
+  max-width: 95vw;
+  max-height: 80vh;
+  overflow-y: auto;
+  animation: fadeInUp 0.7s cubic-bezier(0.23, 1, 0.32, 1);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.camera-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.camera-header button {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #f76b1c;
+  cursor: pointer;
+}
+
+.camera-feed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .App {
+    padding: 1.2rem 0.5rem 1.5rem 0.5rem;
+    max-width: 98vw;
   }
-  to {
-    transform: rotate(360deg);
+  .fab-restart {
+    bottom: 16px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
+    font-size: 1.4rem;
+  }
+  .history-modal {
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+    max-width: 98vw;
+  }
+  .camera-modal {
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+    max-width: 98vw;
   }
 }
