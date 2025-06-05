@@ -2,18 +2,18 @@
 
 /* Variables CSS para consistencia */
 :root {
-  --primary-color: #f76b1c;
-  --secondary-color: #fad961;
-  --background-gradient: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
-  --card-background: #fff;
-  --card-background-alt: #fff8f2;
-  --text-color: #333;
-  --text-color-light: #666;
-  --text-color-lighter: #888;
-  --error-color: #e74c3c;
-  --success-color: #27ae60;
-  --warning-color: #f39c12;
-  --info-color: #3498db;
+  --primary-color: #ffffff;        /* Blanco para texto */
+  --secondary-color: #1e3a8a;      /* Azul marino (mantener) */
+  --background-gradient: linear-gradient(120deg, #000000 0%, #1a1a1a 100%);  /* Negro a gris muy oscuro */
+  --card-background: #1a1a1a;      /* Gris muy oscuro */
+  --card-background-alt: #2a2a2a;  /* Gris oscuro */
+  --text-color: #ffffff;           /* Blanco */
+  --text-color-light: #e5e7eb;     /* Gris muy claro */
+  --text-color-lighter: #9ca3af;   /* Gris claro */
+  --success-color: #059669;        /* Verde (mantener) */
+  --error-color: #dc2626;          /* Rojo (mantener) */
+  --warning-color: #d97706;        /* Naranja (mantener) */
+  --info-color: #1e3a8a;          /* Azul marino */
   --border-radius: 6px;
   --border-radius-large: 12px;
   --border-radius-xl: 18px;
@@ -98,6 +98,14 @@ body {
   margin-bottom: var(--spacing-lg);
   flex-wrap: wrap;
   gap: var(--spacing-md);
+}
+
+.app-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  object-position: center;
+  filter: brightness(0) invert(1); /* Convierte a blanco si es necesario */
 }
 
 .app-header h1 {

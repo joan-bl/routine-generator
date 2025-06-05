@@ -7,6 +7,7 @@ import { useApp } from "./context/AppContext";
 import { AppError, ERROR_TYPES, validateFormData, safeExecute } from "./utils/errorUtils";
 import generateRoutine from "./utils/routineGenerator";
 import "./App.css";
+import logo from './assets/logo.png';
 
 const MOTIVATIONAL_QUOTES = [
   "Today is a great day to improve yourself!",
@@ -310,6 +311,7 @@ function App() {
 
       {/* Header with Stats */}
       <header className="app-header">
+      <img src={logo} alt="Workout Generator" className="app-logo" />
         <h1>Workout Routine Generator</h1>
         {stats.points > 0 && (
           <div className="user-stats">
