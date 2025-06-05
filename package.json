@@ -1,5 +1,5 @@
 {
-  "name": "ejercicio-rutinas",
+  "name": "workout-routine-generator",
   "version": "1.0.0",
   "private": true,
   "description": "Advanced workout routine generator with AI exercise tracking",

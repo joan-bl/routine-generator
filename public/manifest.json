@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Workout Generator",
+  "name": "Workout Routine Generator - AI-Powered Fitness Planning",
+  "description": "Generate personalized workout routines with AI exercise tracking, gamification, and comprehensive progress analytics",
   "icons": [
     {
       "src": "favicon.ico",
@@ -10,16 +11,76 @@
     {
       "src": "logo192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "maskable any"
     },
     {
       "src": "logo512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "maskable any"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "orientation": "portrait",
+  "theme_color": "#f76b1c",
+  "background_color": "#0f0f0f",
+  "categories": ["health", "fitness", "lifestyle", "sports"],
+  "lang": "en",
+  "dir": "ltr",
+  "scope": "/",
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": "Quick Workout",
+      "short_name": "Quick Start",
+      "description": "Start a quick workout session",
+      "url": "/?quick=true",
+      "icons": [
+        {
+          "src": "logo192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Exercise Library",
+      "short_name": "Exercises",
+      "description": "Browse exercise library",
+      "url": "/?view=exercises",
+      "icons": [
+        {
+          "src": "logo192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Progress Analytics",
+      "short_name": "Progress",
+      "description": "View your fitness progress",
+      "url": "/?view=analytics",
+      "icons": [
+        {
+          "src": "logo192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshot-mobile.png",
+      "sizes": "375x812",
+      "type": "image/png",
+      "platform": "narrow"
+    },
+    {
+      "src": "screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "platform": "wide"
+    }
+  ]
 }
